@@ -51,4 +51,4 @@ with col2:
     ax.set_title('Call Option Price Heatmap')
     fig.colorbar(heatmap, ax=ax)
 
-    st.pylot(fig)
+    st.pyplot(fig)
