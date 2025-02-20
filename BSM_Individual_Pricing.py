@@ -24,5 +24,5 @@ if st.button("Calculate Option Prices"):
     r = r / 100
     call_price, put_price = bsm_model(S, K, r, t, sigma)
     st.write("### Option Prices")
-    st.write("Call Price: ", call_price)
-    st.write("Put Price: ", put_price)
+    st.write("Call Price: ", round(call_price, 2))
+    st.write("Put Price: ", round(put_price, 2))
