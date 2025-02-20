@@ -44,12 +44,6 @@ st.markdown(f'<div class="output-text">Put Price: {round(put_price, 2)}</div>', 
 
 st.markdown("<h3>Heatmap: Call Option Price Sensitivity</h3>", unsafe_allow_html=True)
 
-st.header("Output")
-st.write("### Option Prices")
-st.write("Call Price: ", round(call_price, 2))
-st.write("Put Price: ", round(put_price, 2))
-
-st.write("### Heatmap: Call Option Price Sensitivity")
 S_values = np.linspace(S * 0.5, S * 1.5, 50)
 sigma_values = np.linspace(sigma * 0.3, sigma * 1.7, 50)
 S_grid, sigma_grid = np.meshgrid(S_values, sigma_values)
