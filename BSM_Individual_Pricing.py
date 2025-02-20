@@ -25,7 +25,7 @@ def bsm_model(S, K, r, t, sigma):
     put_price = K * np.exp(-r * t) * norm.cdf(-d2) - S * norm.cdf(-d1)
     return call_price, put_price
 
-st.title("Black - Sholes & Merton Option Pricing Calculator")
+st.title("BSM Option Pricing Calculator")
 
 
 st.sidebar.header("Input Parameters")
@@ -38,7 +38,6 @@ sigma = st.sidebar.number_input("Volatility: ", min_value=float(0), value=0.2,  
 r_decimal = r / 100
 call_price, put_price = bsm_model(S, K, r_decimal, t, sigma)
 
-st.markdown("<h3>Option Prices</h3>", unsafe_allow_html=True)
 st.markdown(f'<div class="output-text">Call Price: {round(call_price, 2)}</div>', unsafe_allow_html=True)
 st.markdown(f'<div class="output-text">Put Price: {round(put_price, 2)}</div>', unsafe_allow_html=True)
 
