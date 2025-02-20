@@ -56,7 +56,7 @@ levels = np.linspace(call_grid.min(), call_grid.max(), 9)
 cmap = plt.get_cmap('viridis', 8)
 norm = colors.BoundaryNorm(boundaries=levels, ncolors=cmap.N)    
 
-fig, ax = plt.subplots(figsize=(8, 6))
+fig, ax = plt.subplots(figsize=(6, 4))
 heatmap = ax.pcolormesh(S_grid, sigma_grid, call_grid, shading='auto', cmap=cmap, norm=norm)
 ax.set_xlabel('Underlying Price (S)')
 ax.set_ylabel('Volatility (sigma)')
