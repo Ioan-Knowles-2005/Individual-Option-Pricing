@@ -25,7 +25,7 @@ with col1:
     sigma = st.number_input("Volatility: ", min_value=float(0), value=0.2,  step=0.01, key="V_input")
 
 r_decimal = r / 100
-call_price, put_price = bsm_model(S, K, r, t, sigma)
+call_price, put_price = bsm_model(S, K, r_decimal, t, sigma)
 
 with col2:
     st.header("Output")
