@@ -9,7 +9,7 @@ st.markdown("""
     <style>
     .output-text {
         font-size: 24px;
-        color: black;
+        color: white;
         font-weight: bold;
         margin: 10px 0;
     }
@@ -57,7 +57,7 @@ levels = np.linspace(call_grid.min(), call_grid.max(), 11)
 cmap = plt.get_cmap('viridis', 10)
 norm = colors.BoundaryNorm(boundaries=levels, ncolors=cmap.N)    
 
-fig, ax = plt.subplots(figsize=(10, 8))
+fig, ax = plt.subplots(figsize=(9, 7))
 heatmap = ax.pcolormesh(S_grid, sigma_grid, call_grid, shading='auto', cmap=cmap, norm=norm)
 ax.set_xlabel('Underlying Price (S)')
 ax.set_ylabel('Volatility (sigma)')
