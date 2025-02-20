@@ -35,8 +35,8 @@ with col2:
     st.write("Put Price: ", round(put_price, 2))
 
     st.write("### Heatmap: Call Option Price Sensitivity")
-    S_values = np.linspace(S * 0.5, S * 1.5, 50)
-    sigma_values = np.linspace(sigma * 0.5, sigma * 1.5, 50)
+    S_values = np.linspace(S * 0.5, S * 1.5, 20)
+    sigma_values = np.linspace(sigma * 0.3, sigma * 1.7, 20)
     S_grid, sigma_grid = np.meshgrid(S_values, sigma_values)
     call_grid = np.zeros_like(S_grid)
 
