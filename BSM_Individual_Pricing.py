@@ -26,11 +26,9 @@ with col1:
 
 r_decimal = r / 100
 call_price, put_price = bsm_model(S, K, r, t, sigma)
-rounded_call_price = round(call_price, 2)
-rounded_put_price = round(put_price, 2)
 
 with col2:
     st.header("Output")
     st.write("### Option Prices")
-    st.write("Call Price: ", rounded_call_price)
-    st.write("Put Price: ", rounded_put_price)
+    st.write("Call Price: ", round(call_price, 2))
+    st.write("Put Price: ", round(put_price, 2))
