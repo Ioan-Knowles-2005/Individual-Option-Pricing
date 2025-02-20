@@ -43,8 +43,8 @@ st.markdown(f'<div class="output-text">Put Price: {round(put_price, 2)}</div>', 
 
 st.markdown("<h3>Heatmap: Call Option Price Sensitivity</h3>", unsafe_allow_html=True)
 
-S_values = np.linspace(S * 0.5, S * 1.5, 70)
-sigma_values = np.linspace(sigma * 0.3, sigma * 1.7, 70)
+S_values = np.linspace(S * 0.5, S * 1.5, 40)
+sigma_values = np.linspace(sigma * 0.3, sigma * 1.7, 40)
 S_grid, sigma_grid = np.meshgrid(S_values, sigma_values)
 call_grid = np.zeros_like(S_grid)
 
@@ -56,7 +56,7 @@ levels = np.linspace(call_grid.min(), call_grid.max(), 9)
 cmap = plt.get_cmap('viridis', 8)
 norm = colors.BoundaryNorm(boundaries=levels, ncolors=cmap.N)    
 
-fig, ax = plt.subplots(figsize=(9, 7))
+fig, ax = plt.subplots(figsize=(8, 6))
 heatmap = ax.pcolormesh(S_grid, sigma_grid, call_grid, shading='auto', cmap=cmap, norm=norm)
 ax.set_xlabel('Underlying Price (S)')
 ax.set_ylabel('Volatility (sigma)')
