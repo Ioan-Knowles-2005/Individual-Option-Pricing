@@ -26,3 +26,4 @@ if st.button("Calculate Option Prices"):
     st.write("### Option Prices")
     st.write("Call Price: ", round(call_price, 2))
     st.write("Put Price: ", round(put_price, 2))
+    st.write("CP - PP:", round(call_price - put_price, 2))
