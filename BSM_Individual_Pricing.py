@@ -43,8 +43,8 @@ st.markdown(f'<div class="output-text">Put Price: {round(put_price, 2)}</div>', 
 
 st.markdown("<h3>Heatmap: Call Option Price Sensitivity</h3>", unsafe_allow_html=True)
 
-S_values = np.linspace(S * 0.5, S * 1.5, 20)
-sigma_values = np.linspace(sigma * 0.3, sigma * 1.7, 20)
+S_values = np.linspace(S * 0.5, S * 1.5, 50)
+sigma_values = np.linspace(sigma * 0.3, sigma * 1.7, 50)
 S_grid, sigma_grid = np.meshgrid(S_values, sigma_values)
 call_grid = np.zeros_like(S_grid)
 
@@ -52,8 +52,8 @@ for i in range(S_grid.shape[0]):
     for j in range(S_grid.shape[1]):
         call_grid[i, j], _ = bsm_model(S_grid[i, j], K, r_decimal, t, sigma_grid[i, j])
 
-levels = np.linspace(call_grid.min(), call_grid.max(), 11)
-cmap = plt.get_cmap('viridis', 10)
+levels = np.linspace(call_grid.min(), call_grid.max(), 9)
+cmap = plt.get_cmap('viridis', 8)
 norm = colors.BoundaryNorm(boundaries=levels, ncolors=cmap.N)    
 
 fig, ax = plt.subplots(figsize=(9, 7))
